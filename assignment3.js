@@ -21,24 +21,32 @@
     //     document.getElementById("results").innerHTML=`<p> F = ${F}</p>`;
 
     // }   
-function convertTemp(temp, scale){
-    let results;
+// function convertTemp(temp, scale){
+//     let results;
+
+//     if (scale==="C"){
+//         return (temp * 9/5 +32);
+//     }else if (scale === "F"){
+//         return(temp - 32)* 5/9;
+//     }else{
+//         return "invalid scale";
+//     }
+
+//     return results;
+// }
+function startConvert(){
+    let degrees = prompt("Enter Temperature");
+    let scale = prompt("Enter Scale C or F");
+    let total;
+    // let converted = convertTemp(degrees, scale);
 
     if (scale==="C"){
-        return (temp * 9/5 +32);
+        total = degrees * 9/5 +32;
     }else if (scale === "F"){
-        return(temp - 32)* 5/9;
+        total= degrees - 32* 5/9;
     }else{
         return "invalid scale";
     }
 
-    return results;
-}
-function startConvert(){
-    let degrees = prompt("Enter Temperature");
-    let scale = prompt("Enter Scale C or F");
-
-    let converted = convertTemp(degrees, scale);
-
-    document.getElementById("results").textContent = "Converted temperature:" + converted;
+    document.getElementById("results").textContent = "Converted temperature:" + total;
 }
